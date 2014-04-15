@@ -58,7 +58,7 @@ def compute_general_transductive_gibbs_bound(d_function, empirical_gibbs_risk, m
 
 def compute_corollary_7a_gibbs_bound(empirical_gibbs_risk, m, N, KLQP, delta=0.05):
     """ Transductive PAC-Bayesian bound proposed by Corollary 7(a)
-    in the form presented in Theorem S12 Begin et al. (2014, Supplementary Material)
+    in the form presented in Theorem S12 of Begin et al. (2014, Supplementary Material)
     
     empirical_gibbs_risk : Gibbs risk observed on the training set
     m: Training set size (labeled examples)
@@ -87,8 +87,8 @@ def compute_corollary_7b_gibbs_bound(empirical_gibbs_risk, m, N, KLQP, delta=0.0
 
 
 def compute_derbeko_2007_gibbs_bound(empirical_gibbs_risk, m, N, KLQP, delta=0.05):
-    """ Transductive PAC-Bayesian bound proposed by Derbeko (2007)
-    of Begin et al. (2014)
+    """ Transductive PAC-Bayesian bound proposed by Derbeko (2007), as stated
+    in Equation 15 of Begin et al. (2014)
     
     empirical_gibbs_risk : Gibbs risk observed on the training set
     m: Training set size (labeled examples)
