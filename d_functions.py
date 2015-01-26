@@ -13,7 +13,7 @@ from math import log
 
 def kl_divergence(q, p, *args):
     """ See Equation (3) of Begin et al. (2014)""" 
-    if q == p: return 0.
+    if abs(q-p) < 1e-9: return 0.
     if q <= 0.: return -log(1.-p)
     if q >= 1.: return -log(p)
     
@@ -23,7 +23,7 @@ def kl_divergence(q, p, *args):
 
 def new_transductive_divergence(q, p, m_over_N, *args):
     """ See Equation (8) of Begin et al. (2014)""" 
-    if q == p: return 0.
+    if abs(q-p) < 1e-9: return 0.
     
     if p+1e-9 < m_over_N * q or p-1e-9 > 1.-m_over_N * (1.-q): return 1e9 # Arbitrary big number   
     
@@ -40,7 +40,7 @@ def variation_distance(q, p, *args):
 
 def triangular_discrimination(q, p, *args):
     """ See Section 3.1 of Begin et al. (2014) """
-    if q == p: return 0.
+    if abs(q-p) < 1e-9: return 0.
     
     return (q-p)**2/(q+p) + (q-p)**2/(2.-q-p)
 
